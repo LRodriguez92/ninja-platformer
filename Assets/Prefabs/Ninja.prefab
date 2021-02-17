@@ -16,6 +16,10 @@ GameObject:
   - component: {fileID: 7930926821247386033}
   - component: {fileID: 7930926821247386035}
   - component: {fileID: 7930926821247386034}
+  - component: {fileID: 5020961900587710900}
+  - component: {fileID: 289382810}
+  - component: {fileID: 289382818}
+  - component: {fileID: 289382811}
   m_Layer: 0
   m_Name: Ninja
   m_TagString: Untagged
@@ -102,7 +106,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 3.63, y: 4.58}
+  m_Size: {x: 2.85, y: 4.58}
   m_Direction: 0
 --- !u!50 &7930926821247385999
 Rigidbody2D:
@@ -137,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f51c365549a76a44d9cdad471f891a82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 10
+  acceleration: 7
   maximumSpeed: 10
 --- !u!114 &7930926821247386033
 MonoBehaviour:
@@ -177,3 +181,62 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onGround: 0
+--- !u!114 &5020961900587710900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7930926821247385994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d240cb15adf97d4dacb947dac7d4624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximumHitPoints: 3
+  gameController: {fileID: 0}
+--- !u!114 &289382810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7930926821247385994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848330e34cc8af4458bb27712605f75b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectedCollectibles: 
+--- !u!114 &289382818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7930926821247385994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12145e1d162d095429416a5d5e2d7672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverScreen: {fileID: 0}
+--- !u!95 &289382811
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7930926821247385994}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 710b4a44583f138438ebb873a548dbb9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
