@@ -8,14 +8,24 @@ public class Jumper : MonoBehaviour
 
     public float jumpForce = 7f;
 
+    private Animator animator;
     private Rigidbody2D myRigidbody2D;
     private GroundDetector groundDetector;
 
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         myRigidbody2D = GetComponent<Rigidbody2D>();
         groundDetector = GetComponent<GroundDetector>();
+    }
+
+    private void Update()
+    {
+        if(animator != null)
+        {
+            animator.SetFloat("yVelocity", myRigidbody2D.velocity.y);
+        }
     }
 
     public void Jump()

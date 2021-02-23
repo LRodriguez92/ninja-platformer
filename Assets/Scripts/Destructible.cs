@@ -8,7 +8,10 @@ public class Destructible : MonoBehaviour
     public int maximumHitPoints = 3;
     public GameController gameController;
 
+    public int faction = 0;
+
     private int currentHitPoints;
+    private Animator animator;
 
     public int GetCurrentHitPoints()
     {
@@ -19,6 +22,7 @@ public class Destructible : MonoBehaviour
     void Start()
     {
         currentHitPoints = maximumHitPoints;
+        animator = GetComponent<Animator>();
     }
 
     public void TakeDamage(int damageAmount)
@@ -48,10 +52,17 @@ public class Destructible : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
+        if (animator != null)
+        {
+            animator.SetTrigger("dead");
+        }
 
-        gameController.GameOver();
+        if(gameObject.tag == "Player")
+        {
+            gameController.GameOver();
+        }
 
+        Destroy(gameObject, 0.1f);
     }
 
 }
